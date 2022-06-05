@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Modules/Multiplayer/Start.unity
+    guid: eff828c63256f58428aef903139e8616
+  - enabled: 1
+    path: Assets/Modules/Multiplayer/WorldStreamingTest.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_0_0.unity
+    guid: 9df058a679fbdb4478818074d4cb46a3
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_0_1.unity
+    guid: e2180ec1c63b5cb4da9a8896111047b2
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_0_2.unity
+    guid: a70e62c959d133c42b542277d367bd26
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_0_3.unity
+    guid: e9bfc407dc7e3f8409ddad36b073e0fd
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_1_0.unity
+    guid: 1afc175882513e54da8fe65ac675722d
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_1_1.unity
+    guid: 62b34fba34a4ed24eb35f80d447ef0e5
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_1_2.unity
+    guid: 9a5e328876a7e5a45bd709f6fbe7d713
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_1_3.unity
+    guid: 7982e43f66ca7804baa0a5e23d55a142
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_2_0.unity
+    guid: d586ee1be514f7846bc763c9832255ca
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_2_1.unity
+    guid: 0b53e1f7e0065354e9c529d54c05e96f
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_2_2.unity
+    guid: 59d3bf7273cadd1489787700fd67d77c
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_2_3.unity
+    guid: 94f1ece6965e3fd459b60780b7ab9885
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_3_0.unity
+    guid: a3a11416919d03c4e9cf6a1cc9b5f89d
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_3_1.unity
+    guid: b364e3769bdf8834ab3f8bc77f4f8b53
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_3_2.unity
+    guid: c651565357f332b41891bf593a3b18d9
+  - enabled: 1
+    path: Assets/Scenes/TestTiles/Tiles_3_3.unity
+    guid: 251605847d62fdb49b90bb29021056e1
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 962c2a3bca189df44aea3c219bd4def6, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6bc50b5916914a14aaf3641e39ac25e6, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
