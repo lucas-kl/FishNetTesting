@@ -52,29 +52,19 @@ namespace TheKingdomMetaverse.WorldStreaming
         void Init()
         {
 
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    string sceneName = "Tiles_" + i + "_" + j;
-                    sceneList.Add(new Vector2Int(i, j), sceneName);
-                    //Debug.Log(new Vector2Int(i, j));
-                    Debug.Log(sceneName);
-                }
-            }
+            GetAllSceneTiles();
             Debug.Log("END");
 
-            //GetAllSceneTiles();
+            //GetAllSceneTiles()
             unusedSceneClearTimer = unusedSceneClearMaxTime;
             Debug.Log("Build Grid");
             grid = new Grid<WorldSceneGrid>(
                 gridWidth,
                 gridHeight,
                 gridSize,
-                worldOffset,
-                null
+                worldOffset
             );
-
+            Debug.Log("END2");
 
         }
 
@@ -86,11 +76,8 @@ namespace TheKingdomMetaverse.WorldStreaming
             for (int i = 0; i < sceneCount; i++)
             {
                 Debug.Log("this" + SceneUtility.GetScenePathByBuildIndex(i));
-                //string sceneName = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
-                string sceneName = SceneUtility.GetScenePathByBuildIndex(i).Substring(
-                    0, 
-                    SceneUtility.GetScenePathByBuildIndex(i).Length - 6
-                    ).Substring(SceneUtility.GetScenePathByBuildIndex(i).LastIndexOf('/') + 1);
+                string sceneName = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
+                //string sceneName = SceneUtility.GetScenePathByBuildIndex(i).Substring(0,  SceneUtility.GetScenePathByBuildIndex(i).Length - 6 ).Substring(SceneUtility.GetScenePathByBuildIndex(i).LastIndexOf('/') + 1);
 
                 Debug.Log(sceneName);
                 scenes[i] = sceneName;
@@ -173,6 +160,8 @@ namespace TheKingdomMetaverse.WorldStreaming
             }
 
             unusedSceneClearTimer = unusedSceneClearMaxTime;
+
+            Debug.Log("END RENDER");
         }
 
         void ClearUnusedScenes()

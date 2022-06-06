@@ -132,6 +132,10 @@ public class NetworkHudCanvases : MonoBehaviour
         _clientIndicator.transform.parent.gameObject.SetActive(false);
 #endif
 
+#if UNITY_SERVER
+        _autoStartType = AutoStartType.Server;
+#endif
+
         _networkManager = FindObjectOfType<NetworkManager>();
         if (_networkManager == null)
         {

@@ -20,7 +20,7 @@ public class Grid<TGridObject>
     private TGridObject[,] gridArray;
     private Transform debugObjectParent;
 
-    public Grid(int width, int height, float size, Vector3 ogPos, Func<Grid<TGridObject>, int, int, TGridObject> onGridCreated)
+    public Grid(int width, int height, float size, Vector3 ogPos, Func<Grid<TGridObject>, int, int, TGridObject> onGridCreated = null)
     {
         this.width = width;
         this.height = height;
@@ -29,6 +29,7 @@ public class Grid<TGridObject>
 
         gridArray = new TGridObject[width, height];
 
+        Debug.Log("GGG");
 
         if (onGridCreated != null)
         {
@@ -41,11 +42,12 @@ public class Grid<TGridObject>
             }
         }
 
+        Debug.Log("EEEE");
 
-        bool showDebug = true;
+        bool showDebug = false;
         if (showDebug)
         {
-            TextMesh[,] debugTextArray = new TextMesh[width, height];
+
 
             for (int x = 0; x < gridArray.GetLength(0); x++)
             {
@@ -61,10 +63,12 @@ public class Grid<TGridObject>
             DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white);
             DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white);
 
-
+            /*            
+             *            TextMesh[,] debugTextArray = new TextMesh[width, height];
             OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) => {
                 debugTextArray[eventArgs.x, eventArgs.z].text = gridArray[eventArgs.x, eventArgs.z]?.ToString();
             };
+            */
         }
     }
 
