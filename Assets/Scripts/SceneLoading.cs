@@ -14,16 +14,12 @@ public class SceneLoading : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene(1);
-        if(_networkManager)
+        if(!_networkManager)
         {
             _networkManager = FindObjectOfType<NetworkManager>();
-            if (_networkManager == null)
-                return;
-
-            if (_serverState != LocalConnectionStates.Stopped)
-                _networkManager.ServerManager.StopConnection(true);
-            else
-                _networkManager.ServerManager.StartConnection();
+#if UNITY_WEBGL
+            _networkManager.ClientManager.StartConnection();
+#endif
         }
     }
 

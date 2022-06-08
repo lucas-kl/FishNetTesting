@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -61,6 +62,8 @@ namespace StarterAssets
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
 		[Tooltip("Player View")]
+		public float RotationSpeed = 1f;
+		[Tooltip("Player View")]
 		public float EyePosition = 1f;
 		[Tooltip("How far in degrees can you move the camera up")]
 		public float TopClamp = 70.0f;
@@ -101,7 +104,7 @@ namespace StarterAssets
 		private PlayerControlInputs _input;
 		private GameObject _mainCamera;
 
-		private const float _threshold = 0.01f;
+		private const float _threshold = 0.001f;
 
 		private bool _hasAnimator;
 
@@ -210,6 +213,7 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
+
 			// if there is an input and camera position is not fixed
 			if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
 			{
@@ -225,11 +229,10 @@ namespace StarterAssets
 			_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
 			// Cinemachine will follow this target
-			CinemachineCameraTarget.transform.rotation = Quaternion.Lerp(
-				CinemachineCameraTarget.transform.rotation,
-				Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f),
-				Time.deltaTime * 10f
-			);
+			CinemachineCameraTarget.transform.rotation = Quaternion.Lerp(CinemachineCameraTarget.transform.rotation
+				, Quaternion.Euler(new Vector3(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f)),
+				RotationSmoothTime * 2);
+			
 		}
 
 		private void Move()

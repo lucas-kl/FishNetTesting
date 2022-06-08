@@ -1168,6 +1168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fce93204618f143b156f6ca932e7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 8366607045813366537}
+  playerInput: {fileID: 8366607045813366542}
   networkObject: {fileID: 0}
 --- !u!114 &4334558237280970670
 MonoBehaviour:
@@ -2490,6 +2492,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   CinemachineCameraTarget: {fileID: 4245262715369133657}
+  RotationSpeed: 1
   EyePosition: 1
   TopClamp: 70
   BottomClamp: -30
@@ -2648,7 +2651,7 @@ MonoBehaviour:
   _networkObjectCache: {fileID: 4334558237280970670}
   IgnoredParameters: []
   _animator: {fileID: 3006105196103331778}
-  _smoothFloats: 0
+  _smoothFloats: 1
   _synchronizeInterval: 0.01
   _clientAuthoritative: 1
   _sendToOwner: 0

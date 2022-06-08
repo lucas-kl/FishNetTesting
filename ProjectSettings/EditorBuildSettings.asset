@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Modules/Multiplayer/Start.unity
+    path: Assets/Modules/Multiplayer/Scene/Start.unity
     guid: eff828c63256f58428aef903139e8616
   - enabled: 1
-    path: Assets/Modules/Multiplayer/WorldStreamingTest.unity
+    path: Assets/Modules/Multiplayer/Scene/WorldStreamingTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TestTiles/Tiles_0_0.unity
