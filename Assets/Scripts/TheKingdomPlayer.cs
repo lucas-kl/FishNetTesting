@@ -19,6 +19,8 @@ public class TheKingdomPlayer : MonoBehaviour
     [SerializeField]
     private NetworkObject networkObject;
 
+    private Vector3 centerPoint;
+
     private void Awake()
     {
         playerController.enabled = false;
@@ -36,12 +38,24 @@ public class TheKingdomPlayer : MonoBehaviour
             playerController.enabled = true;
             playerInput.enabled = true;
             playerInput.ActivateInput();
+
+            /*
+            centerPoint = playerController.transform.position;
+            playerController.transform.position += new Vector3(Random.Range(3f, 5f), 0, Random.Range(3f, 5f));
+            */
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*
+        if (networkObject.IsOwner) {
+            playerController.transform.RotateAround(centerPoint, Vector3.up, Time.deltaTime);
+            playerController.transform.Rotate(new Vector3(1,1,0), Space.Self);
+        }
+        */
     }
+
 }

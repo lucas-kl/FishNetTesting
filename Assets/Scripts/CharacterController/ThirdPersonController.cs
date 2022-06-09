@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using DG.Tweening;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -73,6 +72,8 @@ namespace StarterAssets
 		public float CameraAngleOverride = 0.0f;
 		[Tooltip("For locking the camera position on all axis")]
 		public bool LockCameraPosition = false;
+		[Tooltip("For locking Mouse")]
+		public bool LockMouse = false;
 
 		// cinemachine
 		private float _cinemachineTargetYaw;
@@ -136,11 +137,21 @@ namespace StarterAssets
 		private void Update()
 		{
 			_hasAnimator = TryGetComponent(out _animator);
-			
+
+			CheckClicked();
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
 			Interact();
+		}
+
+		private void CheckClicked()
+        {
+			if (_input.clicked)
+            {
+				Cursor.lockState = CursorLockMode.Locked;
+				LockMouse = true;
+			}
 		}
 
         private void Interact()

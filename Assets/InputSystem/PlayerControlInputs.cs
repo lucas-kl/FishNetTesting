@@ -12,6 +12,7 @@ public class PlayerControlInputs : MonoBehaviour
 	public bool sprint;
 	public bool interact;
 	public bool confirm;
+	public bool clicked;
 
 	[Header("Movement Settings")]
 	public bool analogMovement;
@@ -56,6 +57,12 @@ public class PlayerControlInputs : MonoBehaviour
 		ConfirmInput(value.isPressed);
     }
 
+	public void OnClicked(InputValue value)
+	{
+		ClickedInput(value.isPressed);
+	}
+
+
 #else
 // old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -90,6 +97,11 @@ public class PlayerControlInputs : MonoBehaviour
 	{
 		confirm = newConfirmState;
 	}
+
+	public void ClickedInput(bool newClickedState)
+    {
+		clicked = newClickedState;
+    }
 
 
 #if !UNITY_IOS || !UNITY_ANDROID
